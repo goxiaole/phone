@@ -1,0 +1,15 @@
+package ocm.jiema;
+
+public class StringUtils {
+	public static boolean checkStr(String str) {
+		return str.substring(0,1).equals("0");
+		 
+	}
+	
+	public static String getPhone(String str) {
+		return str.substring(2);
+	}
+	public static void main(String[] args) {
+		StringUtils.checkStr("01");
+	}
+}

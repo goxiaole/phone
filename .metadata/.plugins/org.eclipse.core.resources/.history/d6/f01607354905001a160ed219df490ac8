@@ -1,0 +1,9 @@
+package ocm.jiema;
+
+public class Test {
+	public static void main(String[] args) {
+		 Login login=new Login("xiaolev5","xiaole1008");
+		 String token = login.getToken();
+		 System.out.println(token);
+	}
+}

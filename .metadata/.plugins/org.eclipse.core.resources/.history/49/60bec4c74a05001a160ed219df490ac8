@@ -1,0 +1,12 @@
+package ocm.jiema;
+
+public class StringUtils {
+	public static void checkStr(String str) {
+		if(str.substring(1).equals("0")) {
+			System.out.println(str);
+		}
+	}
+	public static void main(String[] args) {
+		StringUtils.checkStr("01");
+	}
+}

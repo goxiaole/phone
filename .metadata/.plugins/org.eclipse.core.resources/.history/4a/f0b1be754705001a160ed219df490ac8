@@ -1,0 +1,13 @@
+package ocm.jiema;
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+public class Login {
+	private   HttpGet doGet=new HttpGet();
+	private static HttpClient client=HttpClientBuilder.create().build();	
+	public String getToken(String username,String password) {
+		
+	}
+}

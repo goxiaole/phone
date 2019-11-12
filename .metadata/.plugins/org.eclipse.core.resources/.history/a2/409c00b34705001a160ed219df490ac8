@@ -1,0 +1,30 @@
+package ocm.jiema;
+
+import java.net.URI;
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.http.Header;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+public class Login {
+	private   HttpGet doGet=new HttpGet();
+	private static HttpClient client=HttpClientBuilder.create().build();	
+	public String getToken(String username,String password) {
+		try {
+			String getTokenUrl="http://api.kmiyz.com/api/do.php?action=loginIn&name="+username+"&password="+password;
+			doGet.setURI(new URI(getTokenUrl));
+			HttpResponse execute = client.execute(doGet);
+			Header[] allHeaders = execute.getAllHeaders();
+			List<Header> asList = Arrays.asList(allHeaders);
+			System.out.println(asList);
+			return allHeaders[0].toString();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+}
